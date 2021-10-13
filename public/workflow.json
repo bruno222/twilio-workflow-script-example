@@ -1,0 +1,774 @@
+{
+  "task_routing": {
+    "filters": [
+      {
+        "filter_friendly_name": "MPA-Claims",
+        "expression": "orgUnit == \"MPA\" AND intent == \"Claims\"",
+        "targets": [
+          {
+            "queue": "WQ12efc7761577f2fce239862cbf01baad",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ12efc7761577f2fce239862cbf01baad",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ12efc7761577f2fce239862cbf01baad",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ12efc7761577f2fce239862cbf01baad",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ12efc7761577f2fce239862cbf01baad",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ12efc7761577f2fce239862cbf01baad",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ12efc7761577f2fce239862cbf01baad",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "MPA-Complaint",
+        "expression": "orgUnit == \"MPA\" AND intent == \"Complaint\"",
+        "targets": [
+          {
+            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "MPA-Research",
+        "expression": "orgUnit == \"MPA\" AND intent == \"Research\"",
+        "targets": [
+          {
+            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "MPA-Commercial",
+        "expression": "orgUnit == \"MPA\" AND intent == \"Commercial\"",
+        "targets": [
+          {
+            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "IPA-Claims",
+        "expression": "orgUnit == \"IPA\" AND intent == \"Claims\"",
+        "targets": [
+          {
+            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "IPA-Complaint",
+        "expression": "orgUnit == \"IPA\" AND intent == \"Complaint\"",
+        "targets": [
+          {
+            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "IPA-Research",
+        "expression": "orgUnit == \"IPA\" AND intent == \"Research\"",
+        "targets": [
+          {
+            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "IPA-Commercial",
+        "expression": "orgUnit == \"IPA\" AND intent == \"Commercial\"",
+        "targets": [
+          {
+            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "AH-Claims",
+        "expression": "orgUnit == \"AH\" AND intent == \"Claims\"",
+        "targets": [
+          {
+            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "AH-Complaint",
+        "expression": "orgUnit == \"AH\" AND intent == \"Complaint\"",
+        "targets": [
+          {
+            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "AH-Research",
+        "expression": "orgUnit == \"AH\" AND intent == \"Research\"",
+        "targets": [
+          {
+            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "AH-Commercial",
+        "expression": "orgUnit == \"AH\" AND intent == \"Commercial\"",
+        "targets": [
+          {
+            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "CAM-Claims",
+        "expression": "orgUnit == \"CAM\" AND intent == \"Claims\"",
+        "targets": [
+          {
+            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "CAM-Complaint",
+        "expression": "orgUnit == \"CAM\" AND intent == \"Complaint\"",
+        "targets": [
+          {
+            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "CAM-Research",
+        "expression": "orgUnit == \"CAM\" AND intent == \"Research\"",
+        "targets": [
+          {
+            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "CAM-Commercial",
+        "expression": "orgUnit == \"CAM\" AND intent == \"Commercial\"",
+        "targets": [
+          {
+            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "expression": "task.language == 'ptBR' AND (worker.language.ptBR > 0 OR worker.language.ptPT > 0)",
+            "order_by": "worker.language.ptBR DESC , worker.language.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "expression": "task.language == 'ptPT' AND (worker.language.ptPT > 0 OR worker.language.ptBR > 0)",
+            "order_by": "worker.language.ptPT DESC , worker.language.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "expression": "task.language == 'frFR' AND (worker.language.frFR > 0 OR worker.language.feBE > 0)",
+            "order_by": "worker.language.frFR DESC , worker.language.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "expression": "task.language == 'frBE' AND (worker.language.feBE > 0 OR worker.language.frFR > 0)",
+            "order_by": "worker.language.feBE DESC , worker.language.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "expression": "task.language == 'nlNL' AND (worker.language.nlNL > 0 OR worker.language.nlBE > 0)",
+            "order_by": "worker.language.nlNL DESC , worker.language.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "expression": "task.language == 'nlBE' AND (worker.language.nlBE > 0 OR worker.language.nlNL > 0)",
+            "order_by": "worker.language.nlBE DESC , worker.language.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "expression": "task.language == 'en' AND (worker.language.en > 0)",
+            "order_by": "worker.language.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      }
+    ]
+  }
+}
