@@ -35,7 +35,7 @@ const run = async () => {
       const filter = {
         filter_friendly_name: queueName,
         expression: `BL == "${BL}" AND intent == "${intent}"`,
-        targets: buildTargetFilters(queueSid, languages),
+        targets: buildTargetFilters(queueSid, languages, BL, intent),
       };
 
       workflow.task_routing.filters.push(filter);
