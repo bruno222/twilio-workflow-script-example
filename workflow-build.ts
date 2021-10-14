@@ -32,23 +32,24 @@ const run = async () => {
         throw new Error(`queueSid not found for ${queueName}.`);
       }
 
-      const filter = {
-        filter_friendly_name: queueName,
-        expression: `BL == "${BL}" AND intent == "${intent}"`,
-        targets: buildTargetFilters(queueSid, languages, BL, intent),
-      };
+      for (let language of Object.keys(languages)) {
+        const filter = {
+          filter_friendly_name: `${queueName}-${language}`,
+          expression: `BL == '${BL}' AND intent == '${intent}' AND language = '${language}'`,
+          targets: buildTargetFilters(queueSid, language, (languages as any)[language], BL, intent),
+        };
 
-      workflow.task_routing.filters.push(filter);
+        workflow.task_routing.filters.push(filter);
+      }
     }
   }
 
-  const workflowStringified = JSON.stringify(workflow, null, 2);
-  fs.writeFileSync('./public/workflow.json', workflowStringified);
+  fs.writeFileSync('./public/workflow.json', JSON.stringify(workflow, null, 2));
   console.log('/public/workflow.json generated.');
 
   if (process.argv[2] === 'deploy') {
     const ret = await workspace.workflows(process.env.TASKROUTER_WORKFLOW_SID!).update({
-      configuration: workflowStringified,
+      configuration: JSON.stringify(workflow),
     });
 
     console.log('workflow has been updated.', process.env.TASKROUTER_WORKFLOW_SID!, ret);
