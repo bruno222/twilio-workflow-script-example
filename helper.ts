@@ -32,8 +32,8 @@ export const buildTargetFilters = (queueSid: string, languages: any) => {
 
     const target = {
       queue: queueSid,
-      expression: `task.language == '${language}' AND (${buildExpression('worker.language.LANG > 0', 'OR', possibleLanguages)})`,
-      order_by: buildExpression('worker.language.LANG DESC', ',', possibleLanguages),
+      expression: `task.language == '${language}' AND (${buildExpression('worker.routing.skills has "LANG"', 'OR', possibleLanguages)})`,
+      order_by: buildExpression('worker.routing.levels.LANG DESC', ',', possibleLanguages),
       skip_if: '1==1',
     };
 

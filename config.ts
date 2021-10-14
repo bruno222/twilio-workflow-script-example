@@ -1,7 +1,7 @@
 import { mountAllQueues } from './helper';
 
 export const orgUnit = ['MPA', 'IPA', 'AH', 'CAM'];
-export const intents = ['Claims', 'Complaint', 'Research', 'Commercial'];
+export const intents = ['Claims', 'Research', 'Complaint', 'Commercial'];
 export const languages = {
   ptBR: ['ptBR', 'ptPT'],
   ptPT: ['ptPT', 'ptBR'],
