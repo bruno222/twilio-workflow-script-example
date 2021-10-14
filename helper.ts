@@ -30,6 +30,9 @@ export const buildTargetFilters = (queueSid: string, languages: any, BL: string,
   for (let language of Object.keys(languages)) {
     const possibleLanguages = languages[language];
 
+    //
+    // First try Agents on that BL + Intent
+    //
     const target = {
       queue: queueSid,
       expression: `task.language == '${language}' AND worker.routing.skills has '${BL}' AND worker.routing.skills has '${intent}' AND (${buildExpression(
@@ -40,10 +43,38 @@ export const buildTargetFilters = (queueSid: string, languages: any, BL: string,
       order_by:
         `worker.routing.levels.${BL} DESC, worker.routing.levels.${intent} DESC, ` +
         buildExpression(`worker.routing.levels.LANG DESC`, ',', possibleLanguages),
-      // skip_if: '1==1',
+      skip_if: '1==1',
     };
 
     targets.push(target);
+
+    //
+    // If no agent is available, increase the agent-audience ignoring the BL, only maintaing the Intent.
+    //
+    const target2 = {
+      queue: queueSid,
+      expression: `task.language == '${language}' AND worker.routing.skills has '${intent}' AND (${buildExpression(
+        'worker.routing.skills has "LANG"',
+        'OR',
+        possibleLanguages
+      )})`,
+      order_by: `worker.routing.levels.${intent} DESC, ` + buildExpression(`worker.routing.levels.LANG DESC`, ',', possibleLanguages),
+      skip_if: '1==1',
+    };
+
+    targets.push(target2);
+
+    //
+    // Again if no agent is available, increase the agent-audience ignoring the BL and the Intent.
+    //
+    const target3 = {
+      queue: queueSid,
+      expression: `task.language == '${language}' AND (${buildExpression('worker.routing.skills has "LANG"', 'OR', possibleLanguages)})`,
+      order_by: buildExpression(`worker.routing.levels.LANG DESC`, ',', possibleLanguages),
+      // skip_if: '1==1',
+    };
+
+    targets.push(target3);
   }
   return targets;
 };
