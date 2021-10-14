@@ -2,95 +2,47 @@
   "task_routing": {
     "filters": [
       {
-        "filter_friendly_name": "MPA-Claims",
-        "expression": "orgUnit == \"MPA\" AND intent == \"Claims\"",
-        "targets": [
-          {
-            "queue": "WQ12efc7761577f2fce239862cbf01baad",
-            "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
-            "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQ12efc7761577f2fce239862cbf01baad",
-            "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
-            "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQ12efc7761577f2fce239862cbf01baad",
-            "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
-            "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQ12efc7761577f2fce239862cbf01baad",
-            "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
-            "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQ12efc7761577f2fce239862cbf01baad",
-            "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
-            "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQ12efc7761577f2fce239862cbf01baad",
-            "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
-            "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQ12efc7761577f2fce239862cbf01baad",
-            "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
-            "order_by": "worker.routing.levels.en DESC",
-            "skip_if": "1==1"
-          }
-        ]
-      },
-      {
         "filter_friendly_name": "MPA-Research",
-        "expression": "orgUnit == \"MPA\" AND intent == \"Research\"",
+        "expression": "BL == \"MPA\" AND intent == \"Research\"",
         "targets": [
           {
-            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "queue": "WQ714ed29dbb087c78b16bbfd922174094",
             "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
             "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "queue": "WQ714ed29dbb087c78b16bbfd922174094",
             "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
             "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "queue": "WQ714ed29dbb087c78b16bbfd922174094",
             "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
             "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "queue": "WQ714ed29dbb087c78b16bbfd922174094",
             "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
             "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "queue": "WQ714ed29dbb087c78b16bbfd922174094",
             "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
             "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "queue": "WQ714ed29dbb087c78b16bbfd922174094",
             "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
             "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQc665ef2515f30cb9cebed17f2911edbc",
+            "queue": "WQ714ed29dbb087c78b16bbfd922174094",
             "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
             "order_by": "worker.routing.levels.en DESC",
             "skip_if": "1==1"
@@ -99,46 +51,94 @@
       },
       {
         "filter_friendly_name": "MPA-Complaint",
-        "expression": "orgUnit == \"MPA\" AND intent == \"Complaint\"",
+        "expression": "BL == \"MPA\" AND intent == \"Complaint\"",
         "targets": [
           {
-            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "queue": "WQ1277911af55e517a9efeb4e9bd0a6835",
             "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
             "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "queue": "WQ1277911af55e517a9efeb4e9bd0a6835",
             "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
             "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "queue": "WQ1277911af55e517a9efeb4e9bd0a6835",
             "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
             "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "queue": "WQ1277911af55e517a9efeb4e9bd0a6835",
             "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
             "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "queue": "WQ1277911af55e517a9efeb4e9bd0a6835",
             "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
             "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "queue": "WQ1277911af55e517a9efeb4e9bd0a6835",
             "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
             "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ816db3514e7999974eb0c807c4fd60a7",
+            "queue": "WQ1277911af55e517a9efeb4e9bd0a6835",
+            "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
+            "order_by": "worker.routing.levels.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "MPA-eCommerce",
+        "expression": "BL == \"MPA\" AND intent == \"eCommerce\"",
+        "targets": [
+          {
+            "queue": "WQ443dd6a179c917e5d1176fb64c7df61f",
+            "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
+            "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ443dd6a179c917e5d1176fb64c7df61f",
+            "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
+            "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ443dd6a179c917e5d1176fb64c7df61f",
+            "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
+            "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ443dd6a179c917e5d1176fb64c7df61f",
+            "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
+            "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ443dd6a179c917e5d1176fb64c7df61f",
+            "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
+            "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ443dd6a179c917e5d1176fb64c7df61f",
+            "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
+            "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ443dd6a179c917e5d1176fb64c7df61f",
             "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
             "order_by": "worker.routing.levels.en DESC",
             "skip_if": "1==1"
@@ -147,94 +147,46 @@
       },
       {
         "filter_friendly_name": "MPA-Commercial",
-        "expression": "orgUnit == \"MPA\" AND intent == \"Commercial\"",
+        "expression": "BL == \"MPA\" AND intent == \"Commercial\"",
         "targets": [
           {
-            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
+            "queue": "WQ766464511be03610f254bfc2ea03dd40",
             "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
             "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
+            "queue": "WQ766464511be03610f254bfc2ea03dd40",
             "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
             "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
+            "queue": "WQ766464511be03610f254bfc2ea03dd40",
             "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
             "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
+            "queue": "WQ766464511be03610f254bfc2ea03dd40",
             "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
             "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
+            "queue": "WQ766464511be03610f254bfc2ea03dd40",
             "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
             "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
+            "queue": "WQ766464511be03610f254bfc2ea03dd40",
             "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
             "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ56fc378d18316eb234e02b23ab92b8fb",
-            "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
-            "order_by": "worker.routing.levels.en DESC",
-            "skip_if": "1==1"
-          }
-        ]
-      },
-      {
-        "filter_friendly_name": "IPA-Claims",
-        "expression": "orgUnit == \"IPA\" AND intent == \"Claims\"",
-        "targets": [
-          {
-            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
-            "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
-            "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
-            "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
-            "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
-            "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
-            "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
-            "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
-            "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
-            "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
-            "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
-            "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
-            "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQe2d2d001f94d0db5b1f7021a21fc71c2",
+            "queue": "WQ766464511be03610f254bfc2ea03dd40",
             "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
             "order_by": "worker.routing.levels.en DESC",
             "skip_if": "1==1"
@@ -243,46 +195,46 @@
       },
       {
         "filter_friendly_name": "IPA-Research",
-        "expression": "orgUnit == \"IPA\" AND intent == \"Research\"",
+        "expression": "BL == \"IPA\" AND intent == \"Research\"",
         "targets": [
           {
-            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "queue": "WQ43c43d2ac8c4970ae420256717638f30",
             "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
             "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "queue": "WQ43c43d2ac8c4970ae420256717638f30",
             "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
             "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "queue": "WQ43c43d2ac8c4970ae420256717638f30",
             "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
             "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "queue": "WQ43c43d2ac8c4970ae420256717638f30",
             "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
             "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "queue": "WQ43c43d2ac8c4970ae420256717638f30",
             "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
             "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "queue": "WQ43c43d2ac8c4970ae420256717638f30",
             "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
             "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQce3705256dd0e1ef5bc439ee145b0a65",
+            "queue": "WQ43c43d2ac8c4970ae420256717638f30",
             "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
             "order_by": "worker.routing.levels.en DESC",
             "skip_if": "1==1"
@@ -291,46 +243,94 @@
       },
       {
         "filter_friendly_name": "IPA-Complaint",
-        "expression": "orgUnit == \"IPA\" AND intent == \"Complaint\"",
+        "expression": "BL == \"IPA\" AND intent == \"Complaint\"",
         "targets": [
           {
-            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "queue": "WQa275b7a498b2b8afd6cf2ab4716cd342",
             "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
             "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "queue": "WQa275b7a498b2b8afd6cf2ab4716cd342",
             "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
             "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "queue": "WQa275b7a498b2b8afd6cf2ab4716cd342",
             "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
             "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "queue": "WQa275b7a498b2b8afd6cf2ab4716cd342",
             "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
             "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "queue": "WQa275b7a498b2b8afd6cf2ab4716cd342",
             "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
             "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "queue": "WQa275b7a498b2b8afd6cf2ab4716cd342",
             "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
             "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ1b08535ca026327306917da52ce1c845",
+            "queue": "WQa275b7a498b2b8afd6cf2ab4716cd342",
+            "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
+            "order_by": "worker.routing.levels.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "IPA-eCommerce",
+        "expression": "BL == \"IPA\" AND intent == \"eCommerce\"",
+        "targets": [
+          {
+            "queue": "WQ9c98d2036dc063cc04eecb8f69475482",
+            "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
+            "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ9c98d2036dc063cc04eecb8f69475482",
+            "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
+            "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ9c98d2036dc063cc04eecb8f69475482",
+            "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
+            "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ9c98d2036dc063cc04eecb8f69475482",
+            "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
+            "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ9c98d2036dc063cc04eecb8f69475482",
+            "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
+            "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ9c98d2036dc063cc04eecb8f69475482",
+            "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
+            "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ9c98d2036dc063cc04eecb8f69475482",
             "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
             "order_by": "worker.routing.levels.en DESC",
             "skip_if": "1==1"
@@ -339,46 +339,46 @@
       },
       {
         "filter_friendly_name": "IPA-Commercial",
-        "expression": "orgUnit == \"IPA\" AND intent == \"Commercial\"",
+        "expression": "BL == \"IPA\" AND intent == \"Commercial\"",
         "targets": [
           {
-            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "queue": "WQd5312b4a60d876d9e3f6a07af6b66698",
             "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
             "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "queue": "WQd5312b4a60d876d9e3f6a07af6b66698",
             "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
             "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "queue": "WQd5312b4a60d876d9e3f6a07af6b66698",
             "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
             "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "queue": "WQd5312b4a60d876d9e3f6a07af6b66698",
             "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
             "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "queue": "WQd5312b4a60d876d9e3f6a07af6b66698",
             "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
             "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "queue": "WQd5312b4a60d876d9e3f6a07af6b66698",
             "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
             "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ775b5b0c43286a58634f5c7e92902649",
+            "queue": "WQd5312b4a60d876d9e3f6a07af6b66698",
             "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
             "order_by": "worker.routing.levels.en DESC",
             "skip_if": "1==1"
@@ -386,47 +386,47 @@
         ]
       },
       {
-        "filter_friendly_name": "AH-Claims",
-        "expression": "orgUnit == \"AH\" AND intent == \"Claims\"",
+        "filter_friendly_name": "AEH-Research",
+        "expression": "BL == \"AEH\" AND intent == \"Research\"",
         "targets": [
           {
-            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "queue": "WQefb7276106e51e2e306313f5e52368cd",
             "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
             "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "queue": "WQefb7276106e51e2e306313f5e52368cd",
             "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
             "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "queue": "WQefb7276106e51e2e306313f5e52368cd",
             "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
             "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "queue": "WQefb7276106e51e2e306313f5e52368cd",
             "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
             "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "queue": "WQefb7276106e51e2e306313f5e52368cd",
             "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
             "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "queue": "WQefb7276106e51e2e306313f5e52368cd",
             "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
             "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ30ba083a60cf68736402da440c1f9ef8",
+            "queue": "WQefb7276106e51e2e306313f5e52368cd",
             "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
             "order_by": "worker.routing.levels.en DESC",
             "skip_if": "1==1"
@@ -434,47 +434,47 @@
         ]
       },
       {
-        "filter_friendly_name": "AH-Research",
-        "expression": "orgUnit == \"AH\" AND intent == \"Research\"",
+        "filter_friendly_name": "AEH-Complaint",
+        "expression": "BL == \"AEH\" AND intent == \"Complaint\"",
         "targets": [
           {
-            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "queue": "WQef34b44876278c14ce4463a40e030227",
             "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
             "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "queue": "WQef34b44876278c14ce4463a40e030227",
             "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
             "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "queue": "WQef34b44876278c14ce4463a40e030227",
             "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
             "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "queue": "WQef34b44876278c14ce4463a40e030227",
             "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
             "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "queue": "WQef34b44876278c14ce4463a40e030227",
             "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
             "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "queue": "WQef34b44876278c14ce4463a40e030227",
             "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
             "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQdba60092225827513661fee35e4fbb55",
+            "queue": "WQef34b44876278c14ce4463a40e030227",
             "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
             "order_by": "worker.routing.levels.en DESC",
             "skip_if": "1==1"
@@ -482,47 +482,47 @@
         ]
       },
       {
-        "filter_friendly_name": "AH-Complaint",
-        "expression": "orgUnit == \"AH\" AND intent == \"Complaint\"",
+        "filter_friendly_name": "AEH-eCommerce",
+        "expression": "BL == \"AEH\" AND intent == \"eCommerce\"",
         "targets": [
           {
-            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "queue": "WQ7482bca92ec78df60b1498e3a799bfec",
             "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
             "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "queue": "WQ7482bca92ec78df60b1498e3a799bfec",
             "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
             "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "queue": "WQ7482bca92ec78df60b1498e3a799bfec",
             "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
             "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "queue": "WQ7482bca92ec78df60b1498e3a799bfec",
             "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
             "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "queue": "WQ7482bca92ec78df60b1498e3a799bfec",
             "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
             "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "queue": "WQ7482bca92ec78df60b1498e3a799bfec",
             "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
             "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ140235841db8983551e182a24d7292f6",
+            "queue": "WQ7482bca92ec78df60b1498e3a799bfec",
             "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
             "order_by": "worker.routing.levels.en DESC",
             "skip_if": "1==1"
@@ -530,95 +530,47 @@
         ]
       },
       {
-        "filter_friendly_name": "AH-Commercial",
-        "expression": "orgUnit == \"AH\" AND intent == \"Commercial\"",
+        "filter_friendly_name": "AEH-Commercial",
+        "expression": "BL == \"AEH\" AND intent == \"Commercial\"",
         "targets": [
           {
-            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
+            "queue": "WQe228d71a8c9b0b0dd90b300260a60601",
             "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
             "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
+            "queue": "WQe228d71a8c9b0b0dd90b300260a60601",
             "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
             "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
+            "queue": "WQe228d71a8c9b0b0dd90b300260a60601",
             "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
             "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
+            "queue": "WQe228d71a8c9b0b0dd90b300260a60601",
             "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
             "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
+            "queue": "WQe228d71a8c9b0b0dd90b300260a60601",
             "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
             "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
+            "queue": "WQe228d71a8c9b0b0dd90b300260a60601",
             "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
             "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQ5d04c1cf0303188586e4367d3cd998b5",
-            "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
-            "order_by": "worker.routing.levels.en DESC",
-            "skip_if": "1==1"
-          }
-        ]
-      },
-      {
-        "filter_friendly_name": "CAM-Claims",
-        "expression": "orgUnit == \"CAM\" AND intent == \"Claims\"",
-        "targets": [
-          {
-            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
-            "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
-            "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
-            "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
-            "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
-            "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
-            "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
-            "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
-            "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
-            "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
-            "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
-            "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
-            "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
-            "skip_if": "1==1"
-          },
-          {
-            "queue": "WQ4d10eb0c674c85fbe6b1155cb430c450",
+            "queue": "WQe228d71a8c9b0b0dd90b300260a60601",
             "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
             "order_by": "worker.routing.levels.en DESC",
             "skip_if": "1==1"
@@ -627,46 +579,46 @@
       },
       {
         "filter_friendly_name": "CAM-Research",
-        "expression": "orgUnit == \"CAM\" AND intent == \"Research\"",
+        "expression": "BL == \"CAM\" AND intent == \"Research\"",
         "targets": [
           {
-            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "queue": "WQ00a241139a3b81dc18505349a1e3ef76",
             "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
             "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "queue": "WQ00a241139a3b81dc18505349a1e3ef76",
             "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
             "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "queue": "WQ00a241139a3b81dc18505349a1e3ef76",
             "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
             "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "queue": "WQ00a241139a3b81dc18505349a1e3ef76",
             "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
             "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "queue": "WQ00a241139a3b81dc18505349a1e3ef76",
             "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
             "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "queue": "WQ00a241139a3b81dc18505349a1e3ef76",
             "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
             "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQe6290d5d86da26a54131b00e01b0e420",
+            "queue": "WQ00a241139a3b81dc18505349a1e3ef76",
             "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
             "order_by": "worker.routing.levels.en DESC",
             "skip_if": "1==1"
@@ -675,46 +627,94 @@
       },
       {
         "filter_friendly_name": "CAM-Complaint",
-        "expression": "orgUnit == \"CAM\" AND intent == \"Complaint\"",
+        "expression": "BL == \"CAM\" AND intent == \"Complaint\"",
         "targets": [
           {
-            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "queue": "WQ976cd86becbe3ff0d310b8e93fefc31a",
             "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
             "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "queue": "WQ976cd86becbe3ff0d310b8e93fefc31a",
             "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
             "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "queue": "WQ976cd86becbe3ff0d310b8e93fefc31a",
             "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
             "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "queue": "WQ976cd86becbe3ff0d310b8e93fefc31a",
             "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
             "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "queue": "WQ976cd86becbe3ff0d310b8e93fefc31a",
             "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
             "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "queue": "WQ976cd86becbe3ff0d310b8e93fefc31a",
             "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
             "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQb634409ae1b39f939184fcb2b4f0e064",
+            "queue": "WQ976cd86becbe3ff0d310b8e93fefc31a",
+            "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
+            "order_by": "worker.routing.levels.en DESC",
+            "skip_if": "1==1"
+          }
+        ]
+      },
+      {
+        "filter_friendly_name": "CAM-eCommerce",
+        "expression": "BL == \"CAM\" AND intent == \"eCommerce\"",
+        "targets": [
+          {
+            "queue": "WQ26bc3285bdb5ad23e19e6cc189643269",
+            "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
+            "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ26bc3285bdb5ad23e19e6cc189643269",
+            "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
+            "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ26bc3285bdb5ad23e19e6cc189643269",
+            "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
+            "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ26bc3285bdb5ad23e19e6cc189643269",
+            "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
+            "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ26bc3285bdb5ad23e19e6cc189643269",
+            "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
+            "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ26bc3285bdb5ad23e19e6cc189643269",
+            "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
+            "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
+            "skip_if": "1==1"
+          },
+          {
+            "queue": "WQ26bc3285bdb5ad23e19e6cc189643269",
             "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
             "order_by": "worker.routing.levels.en DESC",
             "skip_if": "1==1"
@@ -723,46 +723,46 @@
       },
       {
         "filter_friendly_name": "CAM-Commercial",
-        "expression": "orgUnit == \"CAM\" AND intent == \"Commercial\"",
+        "expression": "BL == \"CAM\" AND intent == \"Commercial\"",
         "targets": [
           {
-            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "queue": "WQ578d9fde95700d234b432a1595d7c838",
             "expression": "task.language == 'ptBR' AND (worker.routing.skills has \"ptBR\" OR worker.routing.skills has \"ptPT\")",
             "order_by": "worker.routing.levels.ptBR DESC , worker.routing.levels.ptPT DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "queue": "WQ578d9fde95700d234b432a1595d7c838",
             "expression": "task.language == 'ptPT' AND (worker.routing.skills has \"ptPT\" OR worker.routing.skills has \"ptBR\")",
             "order_by": "worker.routing.levels.ptPT DESC , worker.routing.levels.ptBR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "queue": "WQ578d9fde95700d234b432a1595d7c838",
             "expression": "task.language == 'frFR' AND (worker.routing.skills has \"frFR\" OR worker.routing.skills has \"feBE\")",
             "order_by": "worker.routing.levels.frFR DESC , worker.routing.levels.feBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "queue": "WQ578d9fde95700d234b432a1595d7c838",
             "expression": "task.language == 'frBE' AND (worker.routing.skills has \"feBE\" OR worker.routing.skills has \"frFR\")",
             "order_by": "worker.routing.levels.feBE DESC , worker.routing.levels.frFR DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "queue": "WQ578d9fde95700d234b432a1595d7c838",
             "expression": "task.language == 'nlNL' AND (worker.routing.skills has \"nlNL\" OR worker.routing.skills has \"nlBE\")",
             "order_by": "worker.routing.levels.nlNL DESC , worker.routing.levels.nlBE DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "queue": "WQ578d9fde95700d234b432a1595d7c838",
             "expression": "task.language == 'nlBE' AND (worker.routing.skills has \"nlBE\" OR worker.routing.skills has \"nlNL\")",
             "order_by": "worker.routing.levels.nlBE DESC , worker.routing.levels.nlNL DESC",
             "skip_if": "1==1"
           },
           {
-            "queue": "WQb895c7f3c8cc3ae4dbd864a9b9f5f7c0",
+            "queue": "WQ578d9fde95700d234b432a1595d7c838",
             "expression": "task.language == 'en' AND (worker.routing.skills has \"en\")",
             "order_by": "worker.routing.levels.en DESC",
             "skip_if": "1==1"

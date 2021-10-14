@@ -3,11 +3,11 @@ import { Twilio } from 'twilio';
 export const client = new Twilio(process.env.TWILIO_ACCOUNT_SID!, process.env.TWILIO_AUTH_TOKEN!);
 export const workspace = client.taskrouter.workspaces(process.env.TASKROUTER_WORKSPACE_SID!);
 
-export const mountAllQueues = (orgUnit: string[], intents: string[]) => {
+export const mountAllQueues = (businessLine: string[], intents: string[]) => {
   const _queues = [];
-  for (let org of orgUnit) {
+  for (let BL of businessLine) {
     for (let intent of intents) {
-      _queues.push(`${org}-${intent}`);
+      _queues.push(`${BL}-${intent}`);
     }
   }
   return _queues;

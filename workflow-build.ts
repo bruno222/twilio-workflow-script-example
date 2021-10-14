@@ -1,6 +1,6 @@
 require('dotenv').config();
 import { buildTargetFilters, workspace } from './helper';
-import { intents, languages, orgUnit, queues } from './config';
+import { intents, languages, businessLines, queues } from './config';
 import './config';
 import fs from 'fs';
 
@@ -17,15 +17,15 @@ const run = async () => {
 
   for (let queue of queues) {
     if (!allFriendlyNames.includes(queue)) {
-      throw new Error(`Ops, I found a queue here in the config.ts that is not yet in taskRouter.... Run npm run create:queue first.`);
+      throw new Error(`Ops, I found a queue here in the config.ts that is not yet in taskRouter.... Run npm run queues:create first.`);
     }
   }
 
   allQueues.map((queue) => (mapNameToSid[queue.friendlyName] = queue.sid));
 
-  for (let org of orgUnit) {
+  for (let BL of businessLines) {
     for (let intent of intents) {
-      const queueName = `${org}-${intent}`;
+      const queueName = `${BL}-${intent}`;
       const queueSid = mapNameToSid[queueName];
       if (!queueSid) {
         console.log('mapNameToSid', mapNameToSid);
@@ -34,7 +34,7 @@ const run = async () => {
 
       const filter = {
         filter_friendly_name: queueName,
-        expression: `orgUnit == "${org}" AND intent == "${intent}"`,
+        expression: `BL == "${BL}" AND intent == "${intent}"`,
         targets: buildTargetFilters(queueSid, languages),
       };
 
