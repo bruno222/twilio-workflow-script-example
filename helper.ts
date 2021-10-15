@@ -38,8 +38,8 @@ export const buildTargetFilters = (queueSid: string, language: string, possibleL
       possibleLanguages
     )})`,
     order_by:
-      `worker.routing.levels.${BL} DESC, worker.routing.levels.${intent} DESC, ` +
-      buildExpression(`worker.routing.levels.LANG DESC`, ',', possibleLanguages),
+      buildExpression(`worker.routing.levels.LANG DESC`, ',', possibleLanguages) +
+      `, worker.routing.levels.${BL} DESC, worker.routing.levels.${intent} DESC`,
     skip_if: '1==1',
   };
 
@@ -51,7 +51,7 @@ export const buildTargetFilters = (queueSid: string, language: string, possibleL
   const target2 = {
     queue: queueSid,
     expression: `worker.routing.skills has '${intent}' AND (${buildExpression('worker.routing.skills has "LANG"', 'OR', possibleLanguages)})`,
-    order_by: `worker.routing.levels.${intent} DESC, ` + buildExpression(`worker.routing.levels.LANG DESC`, ',', possibleLanguages),
+    order_by: buildExpression(`worker.routing.levels.LANG DESC`, ',', possibleLanguages) + `, worker.routing.levels.${intent} DESC`,
     skip_if: '1==1',
   };
 
